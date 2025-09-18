@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
@@ -15,37 +16,155 @@
 
 
     <!--Navbar-->
-    <nav id="nav" class="navbar navbar-expand-lg">
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Game store</a>
 
             <!--barra de busqueda-->
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <form class="d-flex d-lg-flex mx-auto flex-grow-0 justify-content-center" role="search">
+                <input class="form-control search-input w-100" type="search" placeholder="Search" aria-label="Search" />
             </form>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <!--barra de menu hamburguesa-->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
+                aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-dark"></span>
             </button>
 
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Ofertas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Novedades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mi cuenta</a>
-                    </li>
+            <!--menu DESKTOP-->
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNavDesktop">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Novedades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mi cuenta</a></li>
                 </ul>
             </div>
         </div>
+
+        <!-- Menú hamburguesa debajo en móviles -->
+        <div class="collapse navbar-collapse d-lg-none shadow" id="navbarMobile">
+            <ul class="navbar-nav text-center d-lg-none">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ofertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Novedades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Mi cuenta</a></li>
+            </ul>
+        </div>
     </nav>
 
+
+
+
+    <!--cards de ventas-->
+    <div class="container my-4" style="background-color: #535f70;">
+    <div class="row g-5 justify-content-center px-lg-5">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/tomb-raider-12731.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">Tom Raider</h5>
+        <p class="card-text">Tomb Raider trata sobre las aventuras de la arqueóloga Lara Croft mientras explora ruinas,
+             resuelve acertijos y lucha contra enemigos para descubrir secretos y artefactos antiguos.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/call-of-duty-mobile-4007.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">Call Of Duty</h5>
+        <p class="card-text">La serie se caracteriza por su jugabilidad militar, que ha abarcado desde la Segunda Guerra Mundial
+             hasta conflictos modernos, guerras espaciales y el universo zombi.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/cyberpunk-2077-12686.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">Need For Speed</h5>
+        <p class="card-text">Aventura que se enfoca en carreras callejeras ilegales, la persecución policial 
+        y la personalización de vehículos. Los jugadores asumen el papel de corredores que deben completar carreras, evadir a la policía y mejorar sus autos,
+         compitiendo en ciudades ficticias con coches de lujo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/halo-5-guardians-2986.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">Hallo 5</h5>
+        <p class="card-text">Trata de una búsqueda para encontrar al Jefe Maestro, quien ha desaparecido misteriosamente, y de la batalla contra la inteligencia artificial Cortana, que se ha rebelado y está usando antiguos
+             artefactos Forerunner conocidos como Guardianes para obligar a una "paz".</p>
+      </div>
+    </div>    
+  </div>
+</div>
+</div>
+
+
+<div class="container my-4 " style="background-color: #535f70; padding-bottom: 60px">
+<div class="row g-4 justify-content-center px-lg-5">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/kratos-de-god-of-war-12689.jpg" class="card-img-top" alt="...">
+      <div class="card-body" style="color: #122e68;">
+        <h5 class="card-title">God of War</h5>
+        <p class="card-text">Acción y aventura que sigue la historia de Kratos, un guerrero espartano que se convierte en el dios de
+             la guerra y busca venganza contra los dioses olímpicos.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/spider-man-12912.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">Spider Man</h5>
+        <p class="card-text">Tratan sobre las aventuras de Peter Parker, un joven que obtiene superpoderes arácnidos y los usa para 
+            combatir el crimen como Spider-Man en la ciudad de Nueva York</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/monkey-d-luffy-en-jump-force-3710.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">One Piece</h5>
+        <p class="card-text">Las aventuras de Monkey D. Luffy y su tripulación, los Piratas del Sombrero de Paja, mientras buscan el legendario tesoro llamado
+             "One Piece" para que Luffy pueda convertirse en el Rey de los Piratas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+    <div class="card h-100 card-hover">
+      <img src="img/paisaje-minecraft-atardecer-en-la-selva-12978.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" style="color: #122e68;">Minecraft</h5>
+        <p class="card-text">Minecraft es un videojuego de tipo sandbox en un mundo abierto hecho de bloques, donde el jugador puede construir, explorar y sobrevivir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--footer-->
+<footer class="bg-dark text-white py-2">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    
+    <!-- Marca -->
+    <div class="footer-brand mb-2 mb-md-0">
+      <h6 class="mb-0">PolarisX</h6>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+      <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+    </div>
+
+  </div>
+</footer>
 
 
     <script src="script.js"></script>

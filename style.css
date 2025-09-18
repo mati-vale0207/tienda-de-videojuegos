@@ -1,22 +1,139 @@
-html,
+html,      /*estilos generales*/
 body {
-    margin: 0;
-    min-height: 100%;
-    background-color: #111d3e;
+    margin: 0;    /*evita los margenes por defecto*/
+    min-height: 100%;    /*ocupa toda la pantalla*/
+    background-color: #111d3e;   /*color de fondo*/
 }
-
+/*estilos para el nav*/
 #nav {
-    padding-top: 70px;
-    padding-bottom: 20px;
-    background-color: #111d3e;
+    padding-top: 70px;   /*padding arriba para el nav*/
+    padding-bottom: 20px;    /*padign abajo para el nav*/
+    background-color: #111d3e;  /*color del nav*/
+    z-index: 1;
 }
 
 #nav .navbar-brand {
-    color: blanchedalmond;
+    color: blanchedalmond;   /*color de texto game store*/
 }
 
-#navbarNavDropdown {
-    background-color: rgb(62, 80, 80);
-    border-radius: 5px;
-    color: blanchedalmond;
+
+/*estilos para barra de busqueda*/
+.search-input {
+    background-color: #111d3e !important; /*color de fondo*/
+    color: rgb(153, 203, 203) !important;   /*color de texto*/
+    border: 1px solid #5e5e5e !important;   /*estilos de borde*/
+    border-radius: 5px;   /*radio de borde*/
 }
+
+.search-input::placeholder {
+    color: #aaa !important;  /*color de la palabra search en la barra de busqueda*/
+}
+
+
+/*estilos para menu hamburguesa*/
+.navbar-toggler {
+    border: 1px solid #5e5e5e !important; /*estilo para icono de menu*/
+}
+
+#nav .nav-link {
+    color: antiquewhite; /*color texto*/
+    padding-left: 20px;  /*pading izquierdo*/
+    transition: transform 0.2s ease;
+}
+
+#nav .nav-link:hover {
+    color: antiquewhite; /*color texto al hacer hover*/
+    transform: scale(1.1);
+}
+
+
+
+/* Padding responsive en nav */
+@media (min-width: 768px) { /* tablets */
+  #nav {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 992px) { /* desktops */
+  #nav {
+    padding-left: 100px; 
+    padding-right: 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  #nav form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+
+/*estilos para cards*/
+
+/* por defecto en moviles ocupa todo el ancho*/
+.card {
+    width: 100%;
+}
+
+/*en pantallas medianas =768px cards mas pequenas*/
+@media (min-width: 768px) {
+    .card {
+        max-width: 250px;
+    }
+}
+
+/*pantallas grandes =1200px un poco mas grandes*/
+@media (min-width: 1200px) {
+    .card {
+        max-width: 300px;
+    }
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+
+/*oculta el texto por defecto*/
+.card-hover .card-text {
+    display: none;
+    transition: all 0.4s ease;
+}
+
+/*muestra el texto al hacer over*/
+.card-hover:hover .card-text {
+    display: block;
+}
+
+/*animacion tipo fade*/
+.card-hover .card-text {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.6s ease, max-height 1 ease;
+}
+
+.card-hover:hover .card-text {
+    opacity: 2;
+    max-height: 200px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card-hover:hover .card-text {
+        display: block;
+    }
+}
+
+.card-hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-hover:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+
