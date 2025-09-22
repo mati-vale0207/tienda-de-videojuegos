@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tienda de Videojuegos</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,27 +16,37 @@
 
 
     <!--Navbar-->
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Game store</a>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light sticky-top pt-5">
+        <div class="container-fluid d-flex flex-column flex-md-row align-items-center">
+          
+            <a class="navbar-brand mb-2 mb-md-0" href="#">Game Store</a>
 
-            <!--barra de busqueda-->
-            <form class="d-flex d-lg-flex mx-auto flex-grow-0 justify-content-center" role="search">
-                <input id="searchBar" class="form-control search-input w-100" type="search" placeholder="Buscar" aria-label="Search" />
-                <ul id="suggestions" class="list-group"></ul>
-            </form>
-            <!--barra de menu hamburguesa-->
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
-                aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon navbar-dark"></span>
-            </button>
+<!-- Solo en móviles -->
+<div class="d-flex d-lg-none w-75 justify-content-between align-items-center mb-2">
+    <!-- Barra de búsqueda -->
+    <form class="d-flex flex-grow-1 me-4" role="search">
+        <input id="searchBar" class="form-control search-input w-100" type="search" placeholder="Buscar" aria-label="Search" />
+        <ul id="suggestions" class="list-group"></ul>
+    </form>
+
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
+        aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+</div>
+
+<!-- Barra de búsqueda para tablets/desktop (mantener igual que antes) -->
+<form class="d-none d-lg-flex mx-auto flex-grow-0 justify-content-center" role="search">
+    <input id="searchBar" class="form-control search-input w-100" type="search" placeholder="Buscar" aria-label="Search" />
+    <ul id="suggestions" class="list-group"></ul>
+</form>
+
 
             <!--menu DESKTOP-->
-            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNavDesktop">
+            <div class="collapse navbar-collapse d-none d-xxl-flex" id="navbarNavDesktop">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ofertas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Novedades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Accion</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Aventura</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Deportes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Multijugador</a></li>
@@ -49,8 +59,6 @@
         <div class="collapse navbar-collapse d-lg-none shadow" id="navbarMobile">
             <ul class="navbar-nav text-center d-lg-none">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ofertas</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Novedades</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Accion</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Aventura</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Deportes</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Multijugador</a></li>
@@ -65,7 +73,7 @@
     <!--cards de ventas-->
     <div class="container my-4" style="background-color: #535f70;">
     <div class="row g-5 justify-content-center px-lg-5">
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/tomb-raider-12731.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -75,7 +83,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/call-of-duty-mobile-4007.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -85,7 +93,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/cyberpunk-2077-12686.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -96,7 +104,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/halo-5-guardians-2986.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -112,7 +120,7 @@
 
 <div class="container my-4 " style="background-color: #535f70; padding-bottom: 60px">
 <div class="row g-4 justify-content-center px-lg-5">
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/kratos-de-god-of-war-12689.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -122,7 +130,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/spider-man-12912.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -132,7 +140,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/monkey-d-luffy-en-jump-force-3710.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">
@@ -142,7 +150,7 @@
       </div>
     </div>
   </div>
-  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="col-6 col-md-6 col-lg-4 d-flex justify-content-center card-item">
     <div class="card h-100 card-hover">
       <img src="img/paisaje-minecraft-atardecer-en-la-selva-12978.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="background-color: rgb(42, 42, 54); border-radius: 0 0 5px 5px;">

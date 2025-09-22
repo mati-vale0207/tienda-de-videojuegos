@@ -32,26 +32,26 @@ const menuItems = [
 
 const searchBar = document.getElementById("searchBar");
 const suggestions = document.getElementById("suggestions");
+const cards = document.querySelectorAll(".card-item");
 
 searchBar.addEventListener("input", () => {
-    const query = searchBar.ariaValueMax.toLowerCase();
+    const query = searchBar.value.toLowerCase().trim();
     suggestions.innerHTML = "";
 
-    if (query.length === 0) return;
+
 
     //filtra segun lo que escriba el usuario
     const filtered = menuItems.filter(item =>
         item.toLowerCase().includes(query)
     );
 
-    if (filtered.length === 0) {
+    if(filtered.length === 0){
         //si no encuentra nada muestra un mensaje
         const li = document.createElement("li");
         li.classList.add("list-group-item", "text-danger");
         li.textContent = "No hay coincidencias";
         suggestions.appendChild(li);
-        return;
-    }
+    } else {
 
     //mostrar coincidencias
     filtered.forEach(item => {
@@ -63,8 +63,33 @@ searchBar.addEventListener("input", () => {
         li.addEventListener("click", () => {
             searchBar.value = item;
             suggestions.innerHTML = "";
+            filterCards(item);
         });
 
         suggestions.appendChild(li);
     });
+}
+
+//filtra las cartas mientras se escribe
+filterCards(query);
 });
+
+//funcion para ocultar/mostrar la card segun la busqueda
+function filterCards(query) {
+    const q = query.toLowerCase().trim();
+
+    // Si el input está vacío, mostrar todas las cards
+    if(q === "") {
+        cards.forEach(card => card.style.display = "flex");
+        return;
+    }
+
+    cards.forEach(card => {
+        const title = card.querySelector(".card-title").textContent.toLowerCase().trim();
+        if(title.includes(q)){
+            card.style.display = "flex"; // o "" si quieres que tome el display original
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
